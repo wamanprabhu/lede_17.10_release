@@ -1,0 +1,91 @@
+Source-Makefile: package/feeds/packages/postgresql/Makefile
+Package: libpq
+Submenu: database
+Version: 9.6.8-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: readline/host postgresql/host
+Build-Types: host
+Section: libs
+Category: Libraries
+Title: PostgreSQL client library
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: postgresql-9.6.8.tar.bz2
+License: PostgreSQL
+Type: ipkg
+Package-Subdir: packages
+Description: PostgreSQL client library.
+http://www.postgresql.org/
+Daniel Golle <daniel@makrotopia.org>
+@@
+
+Package: pgsql-cli
+Submenu: database
+Version: 9.6.8-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libncursesw +libpq +libreadline +librt +zlib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: readline/host postgresql/host
+Build-Types: host
+Section: utils
+Category: Utilities
+Title: Command Line Interface (CLI) to PostgreSQL databases
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: postgresql-9.6.8.tar.bz2
+License: PostgreSQL
+Type: ipkg
+Package-Subdir: packages
+Description: Command Line Interface (CLI) to PostgreSQL databases.
+http://www.postgresql.org/
+Daniel Golle <daniel@makrotopia.org>
+@@
+
+Package: pgsql-cli-extra
+Submenu: database
+Version: 9.6.8-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libncursesw +libpq +libreadline +librt +zlib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: readline/host postgresql/host
+Build-Types: host
+Section: utils
+Category: Utilities
+Title: Command Line extras for PostgreSQL databases
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: postgresql-9.6.8.tar.bz2
+License: PostgreSQL
+Type: ipkg
+Package-Subdir: packages
+Description: Command Line extras for PostgreSQL databases.
+http://www.postgresql.org/
+Daniel Golle <daniel@makrotopia.org>
+@@
+
+Package: pgsql-server
+Submenu: database
+Version: 9.6.8-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +pgsql-cli
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: readline/host postgresql/host
+Build-Types: host
+Section: utils
+Category: Utilities
+Title: PostgreSQL databases Server
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Require-User: postgres=5432:postgres=5432
+Source: postgresql-9.6.8.tar.bz2
+License: PostgreSQL
+Type: ipkg
+Package-Subdir: packages
+Description: PostgreSQL databases Server.
+http://www.postgresql.org/
+Daniel Golle <daniel@makrotopia.org>
+@@
+
+

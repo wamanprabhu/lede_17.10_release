@@ -1,0 +1,22 @@
+Source-Makefile: package/boot/uboot-mvebu38x/Makefile
+Package: uboot-mvebu38x-clearfog
+Version: 2017.03-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread @TARGET_mvebu38x
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: clearfog
+Section: boot
+Category: Boot Loaders
+Title: U-Boot for SolidRun ClearFog A1
+Maintainer: Luka Perkov <luka@openwrt.org>
+Source: u-boot-2017.03.tar.bz2
+License: GPL-2.0 GPL-2.0+
+LicenseFiles: Licenses/README
+Type: ipkg
+Description: U-Boot for SolidRun ClearFog A1
+http://www.denx.de/wiki/U-Boot
+Luka Perkov <luka@openwrt.org>
+@@
+
+

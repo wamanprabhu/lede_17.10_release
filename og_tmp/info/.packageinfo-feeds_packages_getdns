@@ -1,0 +1,27 @@
+Source-Makefile: package/feeds/packages/getdns/Makefile
+Package: getdns
+Menu: 1
+Version: 1.4.1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libopenssl +!GETDNS_ENABLE_STUB_ONLY:libunbound +GETDNS_ENABLE_IDN_LIBIDN:libidn
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Title: getdns (library)
+Maintainer: David Mora <iamperson347+public@gmail.com>
+Source: getdns-1.4.1.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+Type: ipkg
+Package-Subdir: packages
+Description: 	This package contains the getdns library (libgetdns). 
+	This package also contains the "getdns_query" command line wrapper for getdns exposing the features of this implementation (both in the official API and the additional API functions).
+https://getdnsapi.net/
+David Mora <iamperson347+public@gmail.com>
+@@
+Config:
+	source "feeds/packages/libs/getdns/Config.in"
+@@
+
+

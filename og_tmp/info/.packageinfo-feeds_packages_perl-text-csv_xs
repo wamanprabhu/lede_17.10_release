@@ -1,0 +1,22 @@
+Source-Makefile: package/feeds/packages/perl-text-csv_xs/Makefile
+Package: perl-text-csv_xs
+Submenu: Perl
+Version: 1.34-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread perl +perlbase-essential +perlbase-config +perlbase-io +perlbase-dynaloader
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Title: Text comma-separated values manipulation routines
+Maintainer: Philip Prindeville <philipp@redfish-solutions.com>
+Source: Text-CSV_XS-1.34.tgz
+License: GPL-1.0+ Artistic-1.0-Perl
+Type: ipkg
+Package-Subdir: packages
+Description: Text comma-separated values manipulation routines
+http://search.cpan.org/dist/Text-CSV_XS/
+Philip Prindeville <philipp@redfish-solutions.com>
+@@
+
+

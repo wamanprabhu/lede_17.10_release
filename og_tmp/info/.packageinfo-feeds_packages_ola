@@ -1,0 +1,26 @@
+Source-Makefile: package/feeds/packages/ola/Makefile
+Package: ola
+Version: 0.10.5-2
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +protobuf +libusb-1.0 +libuuid +libstdcpp +libpthread +librt +zlib +libncurses +liblo
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: ola/host libtool libintl libiconv libtool libintl libiconv
+Build-Depends/host: protobuf/host
+Build-Types: host
+Section: net
+Category: Network
+Title: Open Lighting Architecture Daemon
+Maintainer: Christian Beier <dontmind@freeshell.org>
+Source: ola-0.10.5-32db3c49d435398d017c6b5c0b25e02a7a831f5c.tar.gz
+License: LGPL-2.1+
+Type: ipkg
+Package-Subdir: packages
+Description:   OLA (Open Lighting Architecture) is a framework that allows applications to
+  send and receive DMX512, using various hardware devices and 'DMX over IP'
+  protocols. It enables software controllers talk to DMX hardware.
+https://www.openlighting.org/
+Christian Beier <dontmind@freeshell.org>
+@@
+
+

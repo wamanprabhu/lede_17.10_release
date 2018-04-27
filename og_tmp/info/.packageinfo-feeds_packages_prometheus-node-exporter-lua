@@ -1,0 +1,130 @@
+Source-Makefile: package/feeds/packages/prometheus-node-exporter-lua/Makefile
+Package: prometheus-node-exporter-lua
+Version: 2017.12.08-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +luasocket +lua
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Title: Prometheus node exporter
+Maintainer: Christian Simon <simon@swine.de>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Package-Subdir: packages
+Description:   Provides node metrics as Prometheus scraping endpoint.
+
+  This service is a lightweight rewrite in LUA of the offical Prometheus node_exporter.
+Christian Simon <simon@swine.de>
+@@
+
+Package: prometheus-node-exporter-lua-nat_traffic
+Version: 2017.12.08-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread prometheus-node-exporter-lua
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Title: Prometheus node exporter (nat_traffic collector)
+Maintainer: Christian Simon <simon@swine.de>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Package-Subdir: packages
+Description: Prometheus node exporter (nat_traffic collector)
+Christian Simon <simon@swine.de>
+@@
+
+Package: prometheus-node-exporter-lua-netstat
+Version: 2017.12.08-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread prometheus-node-exporter-lua
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Title: Prometheus node exporter (netstat collector)
+Maintainer: Christian Simon <simon@swine.de>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Package-Subdir: packages
+Description: Prometheus node exporter (netstat collector)
+Christian Simon <simon@swine.de>
+@@
+
+Package: prometheus-node-exporter-lua-wifi
+Version: 2017.12.08-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread prometheus-node-exporter-lua +libiwinfo-lua +libubus-lua
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Title: Prometheus node exporter (wifi collector)
+Maintainer: Christian Simon <simon@swine.de>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Package-Subdir: packages
+Description: Prometheus node exporter (wifi collector)
+Christian Simon <simon@swine.de>
+@@
+
+Package: prometheus-node-exporter-lua-wifi_stations
+Version: 2017.12.08-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread prometheus-node-exporter-lua +libiwinfo-lua +libubus-lua
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Title: Prometheus node exporter (wifi_stations collector)
+Maintainer: Christian Simon <simon@swine.de>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Package-Subdir: packages
+Description: Prometheus node exporter (wifi_stations collector)
+Christian Simon <simon@swine.de>
+@@
+
+Package: prometheus-node-exporter-lua-bmx6
+Version: 2017.12.08-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread prometheus-node-exporter-lua bmx6 +lua-cjson +bmx6-json
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Title: Prometheus node exporter (bmx6 links collector)
+Maintainer: Christian Simon <simon@swine.de>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Package-Subdir: packages
+Description: Prometheus node exporter (bmx6 links collector)
+Christian Simon <simon@swine.de>
+@@
+
+Package: prometheus-node-exporter-lua-bmx7
+Version: 2017.12.08-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread prometheus-node-exporter-lua bmx7 +lua-cjson +bmx7-json
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Title: Prometheus node exporter (bmx7 links collector)
+Maintainer: Christian Simon <simon@swine.de>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Package-Subdir: packages
+Description: Prometheus node exporter (bmx7 links collector)
+Christian Simon <simon@swine.de>
+@@
+
+

@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/packages/netdata/Makefile
+Package: netdata
+Version: 1.10.0-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +zlib +libuuid +libmnl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: admin
+Category: Administration
+Title: Real-time performance monitoring tool
+Maintainer: 
+Source: netdata-1.10.0.tar.xz
+License: GPL-3.0
+LicenseFiles: COPYING
+Type: ipkg
+Package-Subdir: packages
+Description:   netdata is a highly optimized Linux daemon providing real-time performance
+  monitoring for Linux systems, applications and SNMP devices over the web.
+https://my-netdata.io/
+
+@@
+
+

@@ -1,0 +1,22 @@
+Source-Makefile: package/boot/uboot-socfpga/Makefile
+Package: uboot-socfpga-socfpga_cyclone5_sockit
+Version: 2016.05-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread @TARGET_socfpga
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: socfpga_cyclone5_sockit
+Section: boot
+Category: Boot Loaders
+Title: U-Boot for Terasic SoCkit board
+Maintainer: Marek Vasut <marex@denx.de>
+Source: u-boot-2016.05.tar.bz2
+License: GPL-2.0 GPL-2.0+
+LicenseFiles: Licenses/README
+Type: ipkg
+Description: U-Boot for Terasic SoCkit board
+http://www.denx.de/wiki/U-Boot
+Marek Vasut <marex@denx.de>
+@@
+
+

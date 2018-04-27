@@ -1,0 +1,38 @@
+Source-Makefile: package/kernel/lantiq/ltq-vdsl-mei/Makefile
+Package: kmod-ltq-vdsl-vr9-mei
+Submenu: Network Devices
+Version: <LINUX_VERSION>+1.4.8.5-1
+Depends: @TARGET_lantiq_xrx200 +kmod-ltq-ifxos
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: sys
+Category: Kernel modules
+Title: mei driver for vdsl
+Maintainer: John Crispin <blogic@openwrt.org>
+Source: drv_mei_cpe-1.4.8.5.tar.gz
+Type: ipkg
+Package-Subdir: kernel
+Description: 	Lantiq MEI CPE Kernel Module Driver
+John Crispin <blogic@openwrt.org>
+@@
+
+Package: ltq-vdsl-mei_test
+Version: 1.4.8.5-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread @TARGET_lantiq_xrx200
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Title: Lantiq mei driver test tool
+Maintainer: John Crispin <blogic@openwrt.org>
+Source: drv_mei_cpe-1.4.8.5.tar.gz
+Type: ipkg
+Description: 	Userland tool to directly control the mei driver, this is only needed
+	for test and development purposes.
+http://www.lantiq.com/
+John Crispin <blogic@openwrt.org>
+@@
+
+

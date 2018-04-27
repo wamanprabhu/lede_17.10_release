@@ -1,0 +1,89 @@
+Source-Makefile: target/linux/brcm63xx/Makefile
+Target: brcm63xx
+Target-Board: brcm63xx
+Target-Name: Broadcom BCM63xx
+Target-Path: /misc/datamate/4_4_52/17.10/openwrt-dd
+Target-Arch: mips
+Target-Arch-Packages: brcm63xx
+Target-Features: atm dt gpio pci pcie pcmcia squashfs usb usbgadget
+Target-Depends: 
+Target-Optimization: -Os -pipe -mno-branch-likely -mips32 -mtune=mips32
+CPU-Type: mips32
+Linux-Version: 4.4.52
+Linux-Release: 1
+Linux-Kernel-Arch: mips
+Target-Description:
+	Build firmware images for Broadcom based xDSL/routers
+	currently supports BCM6338, BCM6348 and BCM6358 based devices.
+	(e.g. Inventel Livebox, Siemens SE515, Neufbox 4)
+@@
+Default-Packages: base-files libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd dnsmasq iptables ip6tables ppp ppp-mod-pppoe firewall odhcpd odhcp6c swconfig kmod-gpio-button-hotplug 
+Target-Profile: Default
+Target-Profile-Name: Default Profile
+Target-Profile-Packages: kmod-b43 wpad-mini iwinfo
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+
+@@
+
+Target: brcm63xx/generic
+Target-Board: brcm63xx
+Target-Name: generic
+Target-Path: target/linux/brcm63xx
+Target-Arch: mips
+Target-Arch-Packages: brcm63xx
+Target-Features: atm dt gpio pci pcie pcmcia squashfs usb usbgadget
+Target-Depends: 
+Target-Optimization: -Os -pipe -mno-branch-likely -mips32 -mtune=mips32
+CPU-Type: mips32
+Linux-Version: 4.4.52
+Linux-Release: 1
+Linux-Kernel-Arch: mips
+Target-Description:
+	Build firmware images for Broadcom based xDSL/routers
+	currently supports BCM6338, BCM6348 and BCM6358 based devices.
+	(e.g. Inventel Livebox, Siemens SE515, Neufbox 4)
+@@
+Default-Packages: base-files libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd dnsmasq iptables ip6tables ppp ppp-mod-pppoe firewall odhcpd odhcp6c swconfig kmod-gpio-button-hotplug 
+Target-Profile: Default
+Target-Profile-Name: Default Profile
+Target-Profile-Packages: kmod-b43 wpad-mini iwinfo
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+
+@@
+
+Target: brcm63xx/smp
+Target-Board: brcm63xx
+Target-Name: smp
+Target-Path: target/linux/brcm63xx
+Target-Arch: mips
+Target-Arch-Packages: brcm63xx
+Target-Features: atm dt gpio pci pcie pcmcia squashfs usb usbgadget
+Target-Depends: 
+Target-Optimization: -Os -pipe -mno-branch-likely -mips32 -mtune=mips32
+CPU-Type: mips32
+Linux-Version: 4.4.52
+Linux-Release: 1
+Linux-Kernel-Arch: mips
+Target-Description:
+	Build firmware images for Broadcom based xDSL/routers
+	currently supports BCM6338, BCM6348 and BCM6358 based devices.
+	(e.g. Inventel Livebox, Siemens SE515, Neufbox 4)
+@@
+Default-Packages: base-files libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd dnsmasq iptables ip6tables ppp ppp-mod-pppoe firewall odhcpd odhcp6c swconfig kmod-gpio-button-hotplug 
+Target-Profile: Default
+Target-Profile-Name: Default Profile
+Target-Profile-Packages: kmod-b43 wpad-mini iwinfo
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+
+@@
+
+

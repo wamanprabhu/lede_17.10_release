@@ -1,0 +1,130 @@
+#!/bin/sh
+
+. /lib/functions.sh
+. /lib/functions/system.sh
+
+export IMAGE="$1"
+COMMAND="$2"
+
+export ARGV="$IMAGE"
+export ARGC=1
+
+export SAVE_CONFIG=1
+export SAVE_PARTITIONS=1
+
+export INTERACTIVE=0
+export VERBOSE=1
+export CONFFILES=/tmp/sysupgrade.conffiles
+export CONF_TAR=/tmp/sysupgrade.tgz
+
+RAMFS_COPY_BIN=		# extra programs for temporary ramfs root
+RAMFS_COPY_DATA=	# extra data files
+
+
+[ -f "$CONF_TAR" ] || export SAVE_CONFIG=0
+[ -f /tmp/sysupgrade.always.overwrite.bootdisk.partmap ] && export SAVE_PARTITIONS=0
+
+include /lib/upgrade
+
+
+supivot() {
+#	TMP_ROOT=/tmp/new_root
+#	mkdir -p $TMP_ROOT
+#	mount -t tmpfs none $TMP_ROOT
+
+#	cd /
+#	MOVE_DIRS="bin dev etc lib sbin usr"
+#	for CURR_DIR in $MOVE_DIRS; do
+#		cp -a $CURR_DIR $TMP_ROOT
+#	done
+
+#	mkdir $TMP_ROOT/proc
+#	mkdir $TMP_ROOT/oldroot
+
+#	mount --bind /proc $TMP_ROOT/proc
+
+	return 0
+}
+
+switch_to_ramfs() {
+#	cd $TMP_ROOT
+#	mkdir -p oldroot
+#	/sbin/pivot_root . $TMP_ROOT/oldroot
+#	cd /
+
+#	echo "::restart:/sysupgrade" >> /etc/inittab
+#	echo "umount /oldroot" >> /sysupgrade
+
+	return 0
+}
+
+kill_remaining() { # [ <signal> [ <loop> ] ]
+	local loop_limit=10
+
+	local sig="${1:-TERM}"
+	local loop="${2:-0}"
+	local run=true
+	local stat
+
+	echo -n "Sending $sig to remaining processes ... "
+
+	while $run; do
+		run=false
+		for stat in /proc/[0-9]*/stat; do
+			[ -f "$stat" ] || continue
+
+			local pid name state ppid rest
+			read pid name state ppid rest < $stat
+			name="${name#(}"; name="${name%)}"
+
+			# Skip PID1, ourself and our children
+			[ $pid -ne 1 -a $pid -ne $$ -a $ppid -ne $$ ] || continue
+
+			local cmdline
+			read cmdline < /proc/$pid/cmdline
+
+			# Skip kernel threads
+			[ -n "$cmdline" ] || continue
+
+			echo -n "$name "
+			kill -$sig $pid 2>/dev/null
+
+			[ $loop -eq 1 ] && run=true
+		done
+
+		let loop_limit--
+		[ $loop_limit -eq 0 ] && {
+			echo
+			echo "Failed to kill all processes."
+			exit 1
+		}
+	done
+	echo
+}
+
+
+killall -9 telnetd
+killall -9 dropbear
+killall -9 ash
+
+kill_remaining TERM
+sleep 3
+kill_remaining KILL 1
+
+sleep 1
+
+
+if [ -n "$IMAGE" ] && type 'platform_pre_upgrade' >/dev/null 2>/dev/null; then
+	IS_PRE_UPGRADE=1 platform_pre_upgrade "$IMAGE"
+
+	# Needs to be unset again because of busybox weirdness ...
+	IS_PRE_UPGRADE=
+fi
+
+if [ -n "$(rootfs_type)" ]; then
+	echo "Switching to ramdisk..."
+	switch_to_ramfs
+fi
+
+# Exec new shell from ramfs
+exec /bin/busybox ash -c "$COMMAND"

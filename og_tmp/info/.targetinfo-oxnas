@@ -1,0 +1,29 @@
+Source-Makefile: target/linux/oxnas/Makefile
+Target: oxnas
+Target-Board: oxnas
+Target-Name: PLXTECH/Oxford NAS782x/OX82x
+Target-Path: /misc/datamate/4_4_52/17.10/openwrt-dd
+Target-Arch: arm
+Target-Arch-Packages: oxnas
+Target-Features: dt gpio nand pci pcie ramdisk rtc squashfs ubifs usb
+Target-Depends: 
+Target-Optimization: -Os -pipe -march=armv6k -mtune=mpcore
+CPU-Type: mpcore
+Linux-Version: 4.4.52
+Linux-Release: 1
+Linux-Kernel-Arch: arm
+Target-Description:
+
+@@
+Default-Packages: base-files libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd block-mount fdisk lsblk mdadm kmod-ata-core kmod-ata-oxnas-sata kmod-button-hotplug kmod-input-gpio-keys-polled kmod-ledtrig-usbdev kmod-leds-gpio kmod-usb2-oxnas kmod-usb-storage uboot-envtools uboot-oxnas-ox820 
+Target-Profile: Default
+Target-Profile-Name: Default Profile
+Target-Profile-Packages: kmod-i2c-gpio kmod-gpio-beeper kmod-hwmon-core kmod-hwmon-gpiofan kmod-rtc-pcf8563 kmod-rtc-ds1307 kmod-usb3 
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+	Default package set compatible with most boards.
+@@
+
+

@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# Copyright (C) 2018 OpenWrt.org
+#
+
+. /lib/functions/uci-defaults.sh
+
+board_config_update
+
+board=$(board_name)
+
+case "$board" in
+armada-385-db-ap)
+	3720-DB|Methode-3720-DB)
+		ucidef_set_interfaces_lan_wan "eth1" "eth0"
+	;;
+	*)
+		ucidef_set_interface_lan "eth0"
+	;;
+esac
+
+board_config_flush
+
+exit 0

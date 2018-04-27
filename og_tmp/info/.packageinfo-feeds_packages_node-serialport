@@ -1,0 +1,24 @@
+Source-Makefile: package/feeds/packages/node-serialport/Makefile
+Package: node-serialport
+Submenu: Node.js
+Version: 6.1.1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +node +node-npm
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: node/host
+Section: lang
+Category: Languages
+Title: Node.js package to access serial ports for reading and writing
+Maintainer: John Crispin <blogic@openwrt.org>
+Source: serialport-6.1.1.tgz
+License: Custom
+LicenseFiles: LICENSE
+Type: ipkg
+Package-Subdir: packages
+Description:  Node.js package to access serial ports for reading and writing OR Welcome your robotic JavaScript overlords. Better yet, program them!
+https://www.npmjs.org/package/serialport
+John Crispin <blogic@openwrt.org>
+@@
+
+

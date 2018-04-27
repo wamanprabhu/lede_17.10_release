@@ -1,0 +1,19 @@
+Source-Makefile: target/linux/realview/Makefile
+Target: realview
+Target-Board: realview
+Target-Name: ARM Ltd. Realview board (qemu)
+Target-Path: /misc/datamate/4_4_52/17.10/openwrt-dd
+Target-Arch: arm
+Target-Arch-Packages: realview
+Target-Features: display ext4 fpu ramdisk
+Target-Depends: 
+Target-Optimization: -Os -pipe -march=armv6k -mtune=mpcore -mfpu=vfp
+CPU-Type: mpcore+vfp
+Linux-Version: 4.4.52
+Linux-Release: 1
+Linux-Kernel-Arch: arm
+Target-Description:
+	Build images for ARM Ltd. Realview boards to be run with qemu
+@@
+Default-Packages: base-files libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd  
+

@@ -1,0 +1,20 @@
+Source-Makefile: package/feeds/packages/uledd/Makefile
+Package: uledd
+Version: bc94c7e52009f7ec33b23652502b4754351d8040-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libubox +libubus
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Title: PWM/RGB LED ubus frontend
+Maintainer: John Crispin <john@phrozen.org>
+Source: uledd-bc94c7e52009f7ec33b23652502b4754351d8040.tar.xz
+License: GPL-2.0
+Type: ipkg
+Package-Subdir: packages
+Description: PWM/RGB LED ubus frontend
+John Crispin <john@phrozen.org>
+@@
+
+

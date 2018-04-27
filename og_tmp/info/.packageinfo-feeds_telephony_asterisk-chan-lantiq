@@ -1,0 +1,44 @@
+Source-Makefile: package/feeds/telephony/asterisk-chan-lantiq/Makefile
+Package: asterisk13-chan-lantiq
+Submenu: Telephony
+Version: 20180215-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +kmod-ltq-vmmc asterisk13
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: asterisk13
+Section: net
+Category: Network
+Title: Lantiq channel driver
+Maintainer: Jiri Slachta <jiri@slachta.eu>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Package-Subdir: telephony
+Description: An implementation of a Lantiq TAPI channel driver for Asterisk.
+https://github.com/kochstefan/asterisk_channel_lantiq
+Jiri Slachta <jiri@slachta.eu>
+@@
+
+Package: asterisk15-chan-lantiq
+Submenu: Telephony
+Version: 20180215-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +kmod-ltq-vmmc asterisk15
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: asterisk15
+Section: net
+Category: Network
+Title: Lantiq channel driver
+Maintainer: Jiri Slachta <jiri@slachta.eu>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Package-Subdir: telephony
+Description: An implementation of a Lantiq TAPI channel driver for Asterisk.
+https://github.com/kochstefan/asterisk_channel_lantiq
+Jiri Slachta <jiri@slachta.eu>
+@@
+
+

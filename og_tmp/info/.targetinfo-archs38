@@ -1,0 +1,76 @@
+Source-Makefile: target/linux/archs38/Makefile
+Target: archs38
+Target-Board: archs38
+Target-Name: Synopsys DesignWare ARC HS38
+Target-Path: /misc/datamate/4_4_52/17.10/openwrt-dd
+Target-Arch: arc
+Target-Arch-Packages: archs38
+Target-Features: dt gpio usb
+Target-Depends: 
+Target-Optimization: -Os -pipe -matomic -marchs
+CPU-Type: archs
+Linux-Version: 4.4.52
+Linux-Release: 1
+Linux-Kernel-Arch: arc
+Target-Description:
+	Synopsys DesignWare boards
+@@
+Default-Packages: base-files libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd  
+Target: archs38/generic
+Target-Board: archs38
+Target-Name: Generic
+Target-Path: target/linux/archs38
+Target-Arch: arc
+Target-Arch-Packages: archs38
+Target-Features: dt gpio ramdisk usb
+Target-Depends: 
+Target-Optimization: -Os -pipe -matomic -marchs
+CPU-Type: archs
+Linux-Version: 4.4.52
+Linux-Release: 1
+Linux-Kernel-Arch: arc
+Target-Description:
+	Synopsys DesignWare boards
+@@
+Default-Packages: base-files libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd  
+Target-Profile: Default
+Target-Profile-Name: Default Profile (all drivers)
+Target-Profile-Packages: kmod-usb-core kmod-usb-ohci kmod-mmc kmod-sdhci kmod-ath9k-htc wpad-mini iwinfo
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+	Default package set compatible with most boards.
+@@
+
+Target-Profile: Minimal
+Target-Profile-Name: Minimal Profile (no drivers)
+Target-Profile-Packages:  
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+	Minimal package set compatible with most boards.
+@@
+
+Target-Profile: axs103
+Target-Profile-Name: Synopsys DesignWare AXS103
+Target-Profile-Packages: kmod-usb-core kmod-usb-ohci kmod-mmc kmod-sdhci kmod-ath9k-htc wpad-mini iwinfo
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+	Package set compatible with hardware using Synopsys DesignWare AXS103 boards.
+@@
+
+Target-Profile: nsim_hs
+Target-Profile-Name: Synopsys nSIM
+Target-Profile-Packages:  
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+	Package set compatible with hardware using Synopsys nSIM HS boards.
+@@
+
+

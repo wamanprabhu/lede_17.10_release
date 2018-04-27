@@ -1,0 +1,100 @@
+Source-Makefile: target/linux/lantiq/Makefile
+Target: lantiq
+Target-Board: lantiq
+Target-Name: Lantiq
+Target-Path: /misc/datamate/4_4_52/17.10/openwrt-dd
+Target-Arch: 
+Target-Arch-Packages: lantiq
+Target-Features: dt gpio pci squashfs
+Target-Depends: 
+Target-Optimization: -Os -pipe
+CPU-Type: mips32r2
+Linux-Version: 4.4.52
+Linux-Release: 1
+Linux-Kernel-Arch: arm64
+Target-Description:
+	Build firmware images for Lantiq SoC
+@@
+Default-Packages: base-files libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd dnsmasq iptables ip6tables ppp ppp-mod-pppoe firewall odhcpd odhcp6c 
+Target: lantiq/xrx200
+Target-Board: lantiq
+Target-Name: XRX200
+Target-Path: target/linux/lantiq
+Target-Arch: mips
+Target-Arch-Packages: lantiq
+Target-Features: atm dt gpio jffs2 mips16 nand pci squashfs ubifs usb
+Target-Depends: 
+Target-Optimization: -Os -pipe -mno-branch-likely -mips32r2 -mtune=34kc -mdsp
+CPU-Type: 34kc+dsp
+Linux-Version: 4.4.52
+Linux-Release: 1
+Linux-Kernel-Arch: mips
+Target-Description:
+	Lantiq XRX200
+@@
+Default-Packages: base-files libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd kmod-leds-gpio kmod-gpio-button-hotplug kmod-ltq-vdsl-vr9-mei kmod-ltq-vdsl-vr9 kmod-ltq-atm-vr9 kmod-ltq-ptm-vr9 kmod-ltq-deu-vr9 ltq-vdsl-app dsl-vrx200-firmware-xdsl-a dsl-vrx200-firmware-xdsl-b-patch ppp-mod-pppoa swconfig dnsmasq iptables ip6tables ppp ppp-mod-pppoe firewall odhcpd odhcp6c 
+Target-Profile: Default
+Target-Profile-Name: Default Profile
+Target-Profile-Packages:  
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+	Default package set compatible with most boards.
+@@
+
+Target: lantiq/xway
+Target-Board: lantiq
+Target-Name: XWAY
+Target-Path: target/linux/lantiq
+Target-Arch: mips
+Target-Arch-Packages: lantiq
+Target-Features: atm dt gpio mips16 nand pci ramdisk squashfs ubifs usb
+Target-Depends: 
+Target-Optimization: -Os -pipe -mno-branch-likely -mips32r2 -mtune=34kc -mdsp
+CPU-Type: 34kc+dsp
+Linux-Version: 4.4.52
+Linux-Release: 1
+Linux-Kernel-Arch: mips
+Target-Description:
+	Lantiq XWAY
+@@
+Default-Packages: base-files libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd kmod-leds-gpio kmod-gpio-button-hotplug dnsmasq iptables ip6tables ppp ppp-mod-pppoe firewall odhcpd odhcp6c 
+Target-Profile: Default
+Target-Profile-Name: Default Profile
+Target-Profile-Packages:  
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+	Default package set compatible with most boards.
+@@
+
+Target: lantiq/xway_legacy
+Target-Board: lantiq
+Target-Name: XWAY Legacy
+Target-Path: target/linux/lantiq
+Target-Arch: mips
+Target-Arch-Packages: lantiq
+Target-Features: atm dt gpio mips16 pci ramdisk small_flash squashfs usb
+Target-Depends: 
+Target-Optimization: -Os -pipe -mno-branch-likely -mips32r2 -mtune=34kc -mdsp
+CPU-Type: 34kc+dsp
+Linux-Version: 4.4.52
+Linux-Release: 1
+Linux-Kernel-Arch: mips
+Target-Description:
+	Lantiq XWAY Legacy for old boards with small flash
+@@
+Default-Packages: base-files libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd kmod-leds-gpio kmod-gpio-button-hotplug dnsmasq iptables ip6tables ppp ppp-mod-pppoe firewall odhcpd odhcp6c 
+Target-Profile: Default
+Target-Profile-Name: Default Profile
+Target-Profile-Packages:  
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+	Default package set compatible with most boards.
+@@
+
+

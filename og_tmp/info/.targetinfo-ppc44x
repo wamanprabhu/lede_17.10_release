@@ -1,0 +1,19 @@
+Source-Makefile: target/linux/ppc44x/Makefile
+Target: ppc44x
+Target-Board: ppc44x
+Target-Name: AMCC/IBM PPC44x
+Target-Path: /misc/datamate/4_4_52/17.10/openwrt-dd
+Target-Arch: powerpc
+Target-Arch-Packages: ppc44x
+Target-Features: dt gpio pci pcie squashfs usb
+Target-Depends: 
+Target-Optimization: -Os -pipe -mcpu=440
+CPU-Type: 440
+Linux-Version: 3.18.44
+Linux-Release: 1
+Linux-Kernel-Arch: powerpc
+Target-Description:
+	Build firmware images for AMCC/IBM PPC44x based boards.
+@@
+Default-Packages: base-files libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd dnsmasq iptables ip6tables ppp ppp-mod-pppoe firewall odhcpd odhcp6c 
+

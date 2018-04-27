@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/packages/slide-switch/Makefile
+Package: slide-switch
+Version: 0.9.1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +jshn +jsonfilter
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Title: Translate switch position change to button press
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: slide-switch-0.9.1-d70b5a09f457050e7e3b45fe03787945aa8880a0.tar.gz
+License: GPL-2.0
+LicenseFiles: COPYING
+Type: ipkg
+Package-Subdir: packages
+Description: slide-switch translates slide switch position changes into normal button
+presses and releases for OpenWrt / LEDE devices.
+https://github.com/jefferyto/openwrt-slide-switch
+Jeffery To <jeffery.to@gmail.com>
+@@
+
+

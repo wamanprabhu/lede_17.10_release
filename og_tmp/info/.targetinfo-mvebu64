@@ -1,0 +1,69 @@
+Source-Makefile: target/linux/mvebu64/Makefile
+Target: mvebu64
+Target-Board: mvebu64
+Target-Name: Marvell 64b Boards
+Target-Path: /misc/datamate/4_4_52/17.10/openwrt-dd
+Target-Arch: aarch64
+Target-Arch-Packages: mvebu64
+Target-Features: display dt gpio nand pci pcie ramdisk rtc targz usb
+Target-Depends: 
+Target-Optimization: -Os -pipe -march=armv8-a -mtune=cortex-a53
+CPU-Type: cortex-a53+neon-vfpv4
+Linux-Version: 4.4.52
+Linux-Release: 1
+Linux-Kernel-Arch: arm64
+Target-Description:
+
+@@
+Default-Packages: base-files libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd dnsmasq iptables ip6tables ppp ppp-mod-pppoe firewall odhcpd odhcp6c uboot-envtools ethtool hostapd 
+Target-Profile: armada-ESPRESSObin
+Target-Profile-Name: ESPRESSObin (Marvell Armada 3700 Community Board)
+Target-Profile-Packages: kmod-usb-core kmod-usb2 kmod-usb3 kmod-usb-storage kmod-mmc mmc-utils pciutils 
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+ Package set compatible with the Armada 3700 Community Board.
+@@
+
+Target-Profile: armada-a8k-MACHIATOBin
+Target-Profile-Name: MACHIATOBin (SolidRun Armada 8040 Community Board)
+Target-Profile-Packages: kmod-usb-core kmod-usb2 kmod-usb3 kmod-usb-storage kmod-mmc mmc-utils pciutils 
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+ Package set compatible with the MACHIATOBin 8040 Community Board.
+@@
+
+Target-Profile: armada-a8k-8040-db
+Target-Profile-Name: Marvell Armada 8040 DB (DB-88F8040-A1)
+Target-Profile-Packages: kmod-marvell-sata kmod-scsi-generic kmod-fs-ext4 kmod-fs-msdos kmod-fs-ntfs kmod-usb-core kmod-usb-ohci kmod-usb-uhci kmod-usb-storage kmod-usb-storage-extras kmod-usb2 kmod-usb3 usbutils kmod-mmc mmc-utils kmod-mtd-rw kmod-nbd pciutils fdisk lsblk kmod-ipsec 
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+  Package set compatible with the Armada 88F8040 Development Board.
+@@
+
+Target-Profile: armada-a7k-7040-db
+Target-Profile-Name: Marvell Armada 7040 DB (DB-88F7040-A1)
+Target-Profile-Packages: kmod-marvell-sata kmod-scsi-generic kmod-fs-ext4 kmod-fs-msdos kmod-fs-ntfs kmod-usb-core kmod-usb-ohci kmod-usb-uhci kmod-usb-storage kmod-usb-storage-extras kmod-usb2 kmod-usb3 usbutils kmod-mmc mmc-utils kmod-mtd-rw kmod-nbd pciutils fdisk lsblk kmod-ipsec 
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+  Package set compatible with the Armada 88F7040 Development Board.
+@@
+
+Target-Profile: armada-3720-db
+Target-Profile-Name: Marvell Armada 3720 DB (DB-88F3720-DDR3)
+Target-Profile-Packages: kmod-scsi-generic kmod-fs-ext4 kmod-fs-msdos kmod-fs-ntfs kmod-usb-core kmod-usb-ohci kmod-usb-uhci kmod-usb-storage kmod-usb-storage-extras kmod-usb2 kmod-usb3 usbutils kmod-mmc mmc-utils kmod-mtd-rw kmod-nbd pciutils e2fsprogs dosfstools fdisk lsblk kmod-ipsec 
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+  Package set compatible with the Armada 3720 Development Board (DB-88F3720-DDR3)
+@@
+
+

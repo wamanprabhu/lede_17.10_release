@@ -1,0 +1,26 @@
+This is TeXk, Version 3.1415926 (TeX Live 2009/Debian) (format=tex 2016.12.8)  9 MAR 2018 15:28
+ %&-line parsing enabled.
+**&tex
+
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*help
+
+*h
+
+*exit
+
+*
+! Interruption.
+<*> 
+    
+? quit
+OK, entering \batchmode...
+! Emergency stop.
+<*> 
+    
+*** (job aborted, no legal \end found)
+
+No pages of output.

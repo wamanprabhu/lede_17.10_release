@@ -1,0 +1,46 @@
+Source-Makefile: target/linux/socfpga/Makefile
+Target: socfpga
+Target-Board: socfpga
+Target-Name: Altera SoCFPGA
+Target-Path: /misc/datamate/4_4_52/17.10/openwrt-dd
+Target-Arch: arm
+Target-Arch-Packages: socfpga
+Target-Features: display dt ext4 fpu gpio ramdisk rtc targz ubifs usb usbgadget
+Target-Depends: +@TARGET_ROOTFS_INCLUDE_KERNEL +@TARGET_ROOTFS_INCLUDE_DTB
+Target-Optimization: -Os -pipe -march=armv7-a -mtune=cortex-a9 -mfpu=neon
+CPU-Type: cortex-a9+neon
+Linux-Version: 4.4.52
+Linux-Release: 1
+Linux-Kernel-Arch: arm
+Target-Description:
+
+@@
+Default-Packages: base-files libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd  uboot-envtools ubi-utils kmod-button-hotplug kmod-ledtrig-netdev kmod-usb-core kmod-usb-dwc2 kmod-usb-phy-nop kmod-usb-gadget kmod-usb-lib-composite kmod-usb-storage kmod-usb-storage-gadget dnsmasq iptables ip6tables kmod-nf-nathelper firewall odhcpd odhcp6c 
+Target-Profile: Generic
+Target-Profile-Name: Generic (default)
+Target-Profile-Packages:  
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+ Package set compatible with most Altera SoCFPGA based boards.
+@@
+
+Target-Profile: SOCFPGA_SOCKIT
+Target-Profile-Name: Terasic SoCKit
+Target-Profile-Packages: uboot-socfpga-socfpga_cyclone5_sockit 
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+ The Terasic SoCKit is based on the Altera Cyclone V SoC
+ and offers a large variety of peripherals such as:
+
+  * DDR3
+  * NAND or SPI flash
+  * USB EHCI
+  * USB OTG
+  * User GPIO
+@@
+
+

@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/packages/tio/Makefile
+Package: tio
+Submenu: Terminal
+Version: 1.29-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Title: A simple TTY terminal I/O application
+Maintainer: 
+Source: tio-1.29.tar.xz
+License: GPL-2.0+
+LicenseFiles: COPYING
+Type: ipkg
+Package-Subdir: packages
+Description:   A small and simple TTY terminal I/O application
+https://tio.github.io/
+
+@@
+
+

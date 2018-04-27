@@ -1,0 +1,19 @@
+Source-Makefile: package/kernel/dtc/Makefile
+Package: dtc
+Version: 1.4.1-302fca9f4c283e1994cf0a5a9ce1cf43ca15e6d2
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Title: Device Tree Compiler
+Maintainer: Marek Vasut <marex@denx.de>
+Source: dtc-1.4.1-302fca9f4c283e1994cf0a5a9ce1cf43ca15e6d2.tar.gz
+License: GPL-2.0+
+Type: ipkg
+Description: Device Tree Compiler
+Marek Vasut <marex@denx.de>
+@@
+
+

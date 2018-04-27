@@ -1,0 +1,61 @@
+Source-Makefile: package/feeds/luci/luci-app-dnscrypt-proxy/Makefile
+Package: luci-app-dnscrypt-proxy
+Submenu: 3. Applications
+Version: x-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +uclient-fetch +dnscrypt-proxy
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: lua/host luci-base/host 
+Section: luci
+Category: LuCI
+Title: LuCI support for DNSCrypt-Proxy
+Maintainer: 
+Source: 
+Type: ipkg
+Package-Subdir: luci
+Description: LuCI support for DNSCrypt-Proxy
+
+@@
+
+Package: luci-i18n-dnscrypt-proxy-ja
+Default: LUCI_LANG_ja||(ALL&&m)
+Version: x-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-dnscrypt-proxy
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: lua/host luci-base/host 
+Section: luci
+Category: LuCI
+Title: luci-app-dnscrypt-proxy - ja translation
+Maintainer: 
+Source: 
+Type: ipkg
+Hidden: 1
+Package-Subdir: luci
+Description:     Translation for luci-app-dnscrypt-proxy - 日本語 (Japanese)
+
+@@
+
+Package: luci-i18n-dnscrypt-proxy-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-dnscrypt-proxy
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: lua/host luci-base/host 
+Section: luci
+Category: LuCI
+Title: luci-app-dnscrypt-proxy - ru translation
+Maintainer: 
+Source: 
+Type: ipkg
+Hidden: 1
+Package-Subdir: luci
+Description:     Translation for luci-app-dnscrypt-proxy - Русский (Russian)
+
+@@
+
+

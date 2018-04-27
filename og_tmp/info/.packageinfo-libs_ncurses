@@ -1,0 +1,44 @@
+Source-Makefile: package/libs/ncurses/Makefile
+Package: terminfo
+Version: 5.9-3
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: ncurses/host
+Build-Types: host
+Section: libs
+Category: Libraries
+Title: Terminal Info Database (ncurses)
+Maintainer: 
+Source: ncurses-5.9.tar.gz
+License: MIT
+LicenseFiles: README
+Type: ipkg
+Description: Terminal Info Database (ncurses)
+http://www.gnu.org/software/ncurses/
+
+@@
+
+Package: libncursesw
+Version: 5.9-3
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +terminfo
+Conflicts: 
+Menu-Depends: 
+Provides: libncurses
+Build-Depends: ncurses/host
+Build-Types: host
+Section: libs
+Category: Libraries
+Title: Terminal handling library (Unicode)
+Maintainer: 
+Source: ncurses-5.9.tar.gz
+License: MIT
+LicenseFiles: README
+Type: ipkg
+Description: Terminal handling library (Unicode)
+http://www.gnu.org/software/ncurses/
+
+@@
+
+

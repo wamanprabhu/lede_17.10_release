@@ -1,0 +1,22 @@
+Source-Makefile: package/boot/uboot-mvebu/Makefile
+Package: uboot-mvebu-clearfog
+Version: 2016.03-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread @TARGET_mvebu
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: clearfog
+Section: boot
+Category: Boot Loaders
+Title: U-Boot for SolidRun ClearFog A1
+Maintainer: Luka Perkov <luka@openwrt.org>
+Source: u-boot-2016.03.tar.bz2
+License: GPL-2.0 GPL-2.0+
+LicenseFiles: Licenses/README
+Type: ipkg
+Description: U-Boot for SolidRun ClearFog A1
+http://www.denx.de/wiki/U-Boot
+Luka Perkov <luka@openwrt.org>
+@@
+
+

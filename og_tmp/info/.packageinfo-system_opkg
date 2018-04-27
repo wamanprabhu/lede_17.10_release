@@ -1,0 +1,78 @@
+Source-Makefile: package/system/opkg/Makefile
+Package: opkg
+Menu: 1
+Version: 9c97d5ecd795709c8584e972bfdf3aee3a5b846d-15
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +uclient-fetch
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: unsigned
+Build-Types: host
+Section: base
+Category: Base system
+Title: opkg package manager
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: opkg-9c97d5ecd795709c8584e972bfdf3aee3a5b846d.tar.xz
+License: GPL-2.0
+LicenseFiles: COPYING
+Type: ipkg
+Description:     Lightweight package management system
+  opkg is the opkg Package Management System, for handling
+  installation and removal of packages on a system. It can
+  recursively follow dependencies and download all packages
+  necessary to install a particular package.
+
+  opkg knows how to install both .ipk and .deb packages.
+http://wiki.openmoko.org/wiki/Opkg
+Jo-Philipp Wich <jo@mein.io>
+@@
+Config:
+config OPKG_SUPPORT_MD5
+  bool
+  default n
+  depends on PACKAGE_opkg
+  prompt "Support reading old md5 hashes."
+  help
+	Old opkg used md5s, new uses sha. This options enables understanding both while prefering sha.
+@@
+
+Package: opkg-smime
+Menu: 1
+Version: 9c97d5ecd795709c8584e972bfdf3aee3a5b846d-15
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +uclient-fetch +PACKAGE_opkg-smime:libopenssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: smime
+Build-Types: host
+Section: base
+Category: Base system
+Title: opkg package manager (with S/MIME signature support)
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: opkg-9c97d5ecd795709c8584e972bfdf3aee3a5b846d.tar.xz
+License: GPL-2.0
+LicenseFiles: COPYING
+Type: ipkg
+Description:     Lightweight package management system
+  opkg is the opkg Package Management System, for handling
+  installation and removal of packages on a system. It can
+  recursively follow dependencies and download all packages
+  necessary to install a particular package.
+
+  opkg knows how to install both .ipk and .deb packages.
+
+  This package allows the Package index to be verified with S/MIME.
+http://wiki.openmoko.org/wiki/Opkg
+Jo-Philipp Wich <jo@mein.io>
+@@
+Config:
+config OPKG_SMIME_SUPPORT_MD5
+  bool
+  default n
+  depends on PACKAGE_opkg-smime
+  prompt "Support reading old md5 hashes."
+  help
+	Old opkg used md5s, new uses sha. This options enables understanding both while prefering sha.
+@@
+
+

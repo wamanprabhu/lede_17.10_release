@@ -1,0 +1,19 @@
+Source-Makefile: package/firmware/brcmfmac43430-firmware/Makefile
+Package: brcmfmac43430-firmware-sdio
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: firmware
+Category: Firmware
+Title: Broadcom BCM43430 fullmac SDIO firmware
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	Broadcom BCM43430 fullmac SDIO firmware
+http://www.broadcom.com/
+
+@@
+
+

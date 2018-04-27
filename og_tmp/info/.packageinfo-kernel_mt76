@@ -1,0 +1,21 @@
+Source-Makefile: package/kernel/mt76/Makefile
+Package: kmod-mt76
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+2016-06-17-1
+Depends: +kmod-mac80211 +@DRIVER_11N_SUPPORT @PCI_SUPPORT
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: MediaTek MT76x2/MT7603 wireless driver
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: mt76-2016-06-17-f06ed811cda67ab2ed9932c3e87ba03229e75f4e.tar.xz
+License: GPLv2
+Type: ipkg
+Package-Subdir: kernel
+Description: MediaTek MT76x2/MT7603 wireless driver
+Felix Fietkau <nbd@nbd.name>
+@@
+
+

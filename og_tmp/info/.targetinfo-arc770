@@ -1,0 +1,76 @@
+Source-Makefile: target/linux/arc770/Makefile
+Target: arc770
+Target-Board: arc770
+Target-Name: Synopsys DesignWare ARC 770D
+Target-Path: /misc/datamate/4_4_52/17.10/openwrt-dd
+Target-Arch: arc
+Target-Arch-Packages: arc770
+Target-Features: dt gpio usb
+Target-Depends: 
+Target-Optimization: -Os -pipe -matomic -marc700
+CPU-Type: arc700
+Linux-Version: 4.4.52
+Linux-Release: 1
+Linux-Kernel-Arch: arc
+Target-Description:
+	Synopsys DesignWare boards
+@@
+Default-Packages: base-files libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd  
+Target: arc770/generic
+Target-Board: arc770
+Target-Name: Generic
+Target-Path: target/linux/arc770
+Target-Arch: arc
+Target-Arch-Packages: arc770
+Target-Features: dt gpio ramdisk usb
+Target-Depends: 
+Target-Optimization: -Os -pipe -matomic -marc700
+CPU-Type: arc700
+Linux-Version: 4.4.52
+Linux-Release: 1
+Linux-Kernel-Arch: arc
+Target-Description:
+	Synopsys DesignWare boards
+@@
+Default-Packages: base-files libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd  
+Target-Profile: Default
+Target-Profile-Name: Default Profile (all drivers)
+Target-Profile-Packages: kmod-usb-core kmod-usb-ohci kmod-usb2 kmod-mmc kmod-sdhci kmod-ath9k-htc wpad-mini iwinfo
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+	Default package set compatible with most boards.
+@@
+
+Target-Profile: Minimal
+Target-Profile-Name: Minimal Profile (no drivers)
+Target-Profile-Packages:  
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+	Minimal package set compatible with most boards.
+@@
+
+Target-Profile: axs101
+Target-Profile-Name: Synopsys DesignWare AXS101
+Target-Profile-Packages: kmod-usb-core kmod-usb-ohci kmod-usb2 kmod-mmc kmod-sdhci kmod-ath9k-htc wpad-mini iwinfo
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+	Package set compatible with hardware using Synopsys DesignWare AXS101 boards.
+@@
+
+Target-Profile: nsim_700
+Target-Profile-Name: Synopsys nSIM
+Target-Profile-Packages:  
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+	Package set compatible with hardware using Synopsys nSIM 700 boards.
+@@
+
+

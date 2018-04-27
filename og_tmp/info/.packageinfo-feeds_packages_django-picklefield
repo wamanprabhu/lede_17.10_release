@@ -1,0 +1,22 @@
+Source-Makefile: package/feeds/packages/django-picklefield/Makefile
+Package: django-picklefield
+Submenu: Python
+Version: 1.0.0-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +python +django
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Title: Pickled object field for Django
+Maintainer: Gergely Kiss <mail.gery@gmail.com>
+Source: django-picklefield-1.0.0.tar.gz
+License: MIT
+Type: ipkg
+Package-Subdir: packages
+Description:   Pickled object field for Django
+http://github.com/gintas/django-picklefield/
+Gergely Kiss <mail.gery@gmail.com>
+@@
+
+

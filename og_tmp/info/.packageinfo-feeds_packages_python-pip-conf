@@ -1,0 +1,21 @@
+Source-Makefile: package/feeds/packages/python-pip-conf/Makefile
+Package: python-pip-conf
+Submenu: Python
+Version: 0.1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Title: Configuration file for pip/pip3
+Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
+Source: 
+Type: ipkg
+Package-Subdir: packages
+Description:  Configuration file for pip/pip3
+https://pip.pypa.io
+Alexandru Ardelean <ardeleanalex@gmail.com>
+@@
+
+

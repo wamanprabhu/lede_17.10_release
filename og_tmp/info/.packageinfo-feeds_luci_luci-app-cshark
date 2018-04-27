@@ -1,0 +1,21 @@
+Source-Makefile: package/feeds/luci/luci-app-cshark/Makefile
+Package: luci-app-cshark
+Submenu: 3. Applications
+Version: x-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +cshark
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: lua/host luci-base/host 
+Section: luci
+Category: LuCI
+Title: Cloudshark capture tool Web UI
+Maintainer: Luka Perkov <luka@openwrt.org>
+Source: 
+Type: ipkg
+Package-Subdir: luci
+Description: Cloudshark capture tool Web UI
+Luka Perkov <luka@openwrt.org>
+@@
+
+

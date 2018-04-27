@@ -1,0 +1,21 @@
+Source-Makefile: package/feeds/packages/netwhere/Makefile
+Package: netwhere
+Version: 0.9-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libtins +libmicrohttpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: boost
+Section: utils
+Category: Utilities
+Title: Netwhere
+Maintainer: Ben Smith
+Source: netwhere-0.9.tar.gz
+License: MIT
+Type: ipkg
+Package-Subdir: packages
+Description:   Network monitor
+Ben Smith
+@@
+
+

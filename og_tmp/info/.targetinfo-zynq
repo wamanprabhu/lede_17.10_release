@@ -1,0 +1,49 @@
+Source-Makefile: target/linux/zynq/Makefile
+Target: zynq
+Target-Board: zynq
+Target-Name: Xilinx Zynq 7000 SoCs
+Target-Path: /misc/datamate/4_4_52/17.10/openwrt-dd
+Target-Arch: arm
+Target-Arch-Packages: zynq
+Target-Features: display dt ext4 fpu gpio pci rtc targz usb usbgadget
+Target-Depends: 
+Target-Optimization: -Os -pipe -march=armv7-a -mtune=cortex-a9 -mfpu=neon
+CPU-Type: cortex-a9+neon
+Linux-Version: 4.4.52
+Linux-Release: 1
+Linux-Kernel-Arch: arm
+Target-Description:
+	Build firmware image for Zynq 7000 SoC devices.
+@@
+Default-Packages: base-files libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd dnsmasq iptables ip6tables ppp ppp-mod-pppoe firewall odhcpd odhcp6c uboot-envtools 
+Target-Profile: ZC702
+Target-Profile-Name: ZC702 development board
+Target-Profile-Packages: uboot-zynq-zc702 
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+	Build firmware image for Xilinx Zynq ZC702 development board.
+@@
+
+Target-Profile: ZED
+Target-Profile-Name: ZedBoard development board
+Target-Profile-Packages: uboot-zynq-zed 
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+	Build firmware image for Avnet Digilent ZedBoard development board.
+@@
+
+Target-Profile: ZYBO
+Target-Profile-Name: ZYBO development board
+Target-Profile-Packages: uboot-zynq-zybo 
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+	Build firmware image for Digilent ZYBO development board.
+@@
+
+

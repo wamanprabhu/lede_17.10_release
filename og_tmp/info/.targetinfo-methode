@@ -1,0 +1,19 @@
+Source-Makefile: target/linux/methode/Makefile
+Target: methode
+Target-Board: methode
+Target-Name: Methode
+Target-Path: /misc/datamate/4_4_52/17.10/openwrt-dd
+Target-Arch: aarch64
+Target-Arch-Packages: methode
+Target-Features: display dt gpio nand pci pcie rtc squashfs usb
+Target-Depends: 
+Target-Optimization: -Os -pipe -march=armv8-a -mtune=cortex-a53
+CPU-Type: cortex-a53+neon-vfpv4
+Linux-Version: 4.4.52
+Linux-Release: 1
+Linux-Kernel-Arch: arm64
+Target-Description:
+
+@@
+Default-Packages: base-files libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd dnsmasq iptables ip6tables ppp ppp-mod-pppoe firewall odhcpd odhcp6c uboot-envtools ethtool 
+

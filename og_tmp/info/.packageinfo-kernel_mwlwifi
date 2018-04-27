@@ -1,0 +1,21 @@
+Source-Makefile: package/kernel/mwlwifi/Makefile
+Package: kmod-mwlwifi
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+10.3.4.0-20170713-1
+Depends: +kmod-mac80211 +@DRIVER_11N_SUPPORT @PCI_SUPPORT @TARGET_mvebu||TARGET_mvebu64
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Marvell 88W8864 wireless driver
+Maintainer: Damir Samardzic <damir.samardzic@sartura.hr>
+Source: mwlwifi-10.3.4.0-20170713-4f6006807d29a846fd452f66a77c1fb60bc1a72c.tar.xz
+License: ISC
+Type: ipkg
+Package-Subdir: kernel
+Description: Marvell 88W8864 wireless driver
+Damir Samardzic <damir.samardzic@sartura.hr>
+@@
+
+

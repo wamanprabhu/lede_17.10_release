@@ -1,0 +1,89 @@
+Source-Makefile: target/linux/mvebu38x/Makefile
+Target: mvebu38x
+Target-Board: mvebu38x
+Target-Name: Marvell Armada 38x
+Target-Path: /misc/datamate/4_4_52/17.10/openwrt-dd
+Target-Arch: arm
+Target-Arch-Packages: mvebu38x
+Target-Features: dt gpio nand pci pcie rtc squashfs targz usb
+Target-Depends: 
+Target-Optimization: -Os -pipe -march=armv7-a -mtune=cortex-a9 -mfpu=vfpv3-d16
+CPU-Type: cortex-a9+vfpv3
+Linux-Version: 4.4.52
+Linux-Release: 1
+Linux-Kernel-Arch: arm
+Target-Description:
+
+@@
+Default-Packages: base-files libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd dnsmasq iptables ip6tables ppp ppp-mod-pppoe firewall odhcpd odhcp6c uboot-envtools kmod-gpio-button-hotplug 
+Target-Profile: Caiman
+Target-Profile-Name: Linksys WRT1200AC (Caiman)
+Target-Profile-Packages: kmod-mwlwifi wpad-mini swconfig iwinfo
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+ Package set compatible with the Linksys WRT1200AC (Caiman).
+@@
+
+Target-Profile: Cobra
+Target-Profile-Name: Linksys WRT1900ACv2 (Cobra)
+Target-Profile-Packages: kmod-mwlwifi wpad-mini swconfig iwinfo
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+ Package set compatible with the Linksys WRT1900AC (Cobra).
+@@
+
+Target-Profile: Shelby
+Target-Profile-Name: Linksys WRT1900ACS (Shelby)
+Target-Profile-Packages: kmod-mwlwifi wpad-mini swconfig iwinfo
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+ Package set compatible with the Linksys WRT1900ACS (Shelby).
+@@
+
+Target-Profile: Rango
+Target-Profile-Name: Linksys WRT3200ACM (Rango)
+Target-Profile-Packages: kmod-mwlwifi wpad-mini swconfig iwinfo
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+ Package set compatible with the Linksys WRT3200ACM (Rango).
+@@
+
+Target-Profile: 385-RD
+Target-Profile-Name: Marvell Armada 385 RD (RD-88F6820-AP)
+Target-Profile-Packages:  
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+ Package set compatible with the Armada 385 reference design board (RD-88F6820-AP).
+@@
+
+Target-Profile: 385-DB-AP
+Target-Profile-Name: Marvell Armada 385 DB AP (DB-88F6820-AP)
+Target-Profile-Packages:  
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+ Package set compatible with the Armada 385 access point development board (DB-88F6820-AP).
+@@
+
+Target-Profile: Solidrun-Clearfog-A1
+Target-Profile-Name: SolidRun ClearFog A1 board
+Target-Profile-Packages: uboot-mvebu38x-clearfog swconfig 
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+ Package set compatible with the SolidRun ClearFog A1 board
+@@
+
+
